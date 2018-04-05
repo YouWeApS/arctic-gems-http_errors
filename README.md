@@ -29,3 +29,23 @@ class ApplicationController < ActionController::Base
   include HttpError::Response
 end
 ```
+
+Or you can implement your own handler for all `HttpError`s
+
+```ruby
+class ApplicationController < ActionController::Base
+  rescue_from HttpError::Error do |error|
+    # Handle the error here
+  end
+end
+```
+
+Or for a specific, single error
+
+```ruby
+class ApplicationController < ActionController::Base
+  rescue_from HttpError::Teapot do |error|
+    render json: { error: 'This is silly' }, status: 418
+  end
+end
+```
