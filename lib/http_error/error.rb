@@ -7,7 +7,7 @@ module HttpError
     end
 
     def status
-      self.class.status || 500
+      self.class.status
     end
 
     def error

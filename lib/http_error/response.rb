@@ -1,4 +1,4 @@
-module s
+module HttpError
   module Response
     extend ActiveSupport::Concern
 

@@ -12,3 +12,28 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+RSpec.shared_examples :http_error do |expected_status, class_message, instance_message|
+  it { is_expected.to be_a HttpError::Error }
+  let(:error) { described_class.new instance_message }
+
+  describe '#status' do
+    subject { error.status }
+    it { is_expected.to eql expected_status }
+  end
+
+  describe '.status' do
+    subject { described_class.status }
+    it { is_expected.to eql expected_status }
+  end
+
+  describe '#message' do
+    subject { error.message }
+    it { is_expected.to eql instance_message }
+  end
+
+  describe '.message' do
+    subject { described_class.message }
+    it { is_expected.to eql class_message }
+  end
+end
