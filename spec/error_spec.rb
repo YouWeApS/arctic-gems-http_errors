@@ -23,3 +23,7 @@ end
 RSpec.describe HttpError::InternalServerError do
   it_behaves_like :http_error, 500, 'Internal server error', 'some message'
 end
+
+RSpec.describe HttpError::NotImplemented do
+  it_behaves_like :http_error, 501, 'Not implemented', 'some message'
+end
