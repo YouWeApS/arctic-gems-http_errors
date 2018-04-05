@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "http_errors/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "http_errors"
+  spec.name          = "http-errors"
   spec.version       = HttpErrors::VERSION
   spec.authors       = ["Emil Kampp"]
   spec.email         = ["emil@kampp.me"]
@@ -13,10 +13,6 @@ Gem::Specification.new do |spec|
   spec.description   = 'Easy way to raise HTTP errors from your ruby application'
   spec.homepage      = "https://github.com/YouWeApS/arctic-gems-http_errors"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  spec.metadata["allowed_push_host"] = "https://github.com/YouWeApS/arctic-gems-http_errors"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
