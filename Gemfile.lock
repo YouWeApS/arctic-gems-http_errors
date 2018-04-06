@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    http-errors (0.1.0)
+    http-errors (0.1.1)
       activesupport (~> 5.1)
 
 GEM
