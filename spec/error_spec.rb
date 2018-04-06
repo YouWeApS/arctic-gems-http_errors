@@ -27,3 +27,7 @@ end
 RSpec.describe HttpError::NotImplemented do
   it_behaves_like :http_error, 501, 'Not implemented', 'some message'
 end
+
+RSpec.describe HttpError::NotFound do
+  it_behaves_like :http_error, 404, 'Not found', 'some message'
+end
