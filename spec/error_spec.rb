@@ -31,3 +31,7 @@ end
 RSpec.describe HttpError::NotFound do
   it_behaves_like :http_error, 404, 'Not found', 'some message'
 end
+
+RSpec.describe HttpError::ToManyRequests do
+  it_behaves_like :http_error, 429, 'To Many Requests', 'some message'
+end
